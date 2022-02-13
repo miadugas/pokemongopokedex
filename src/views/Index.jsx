@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import PokemonList from "../components/PokemonList";
 import PokemonForm from "../components/PokemonForm";
 
@@ -6,21 +6,16 @@ const Index = () => {
   let [results, setResults] = useState([]);
   let [filteredPokemon, setFilteredPokemon] = useState([]);
   let [searchName, setSearchName] = useState("");
-  let [searchNum, setSearchNum] = useState("");
   let [searchType, setSearchType] = useState("");
   let [searchWeakness, setSearchWeakness] = useState("");
 
   const filterResults = (value, type) => {
     let filterName = searchName;
-    let filterNum = searchNum;
     let filterType = searchType;
     let filterWeakness = searchWeakness;
 
     switch (type) {
       case "name":
-        filterName = value;
-        break;
-      case "number":
         filterName = value;
         break;
       case "type":
@@ -36,15 +31,13 @@ const Index = () => {
     let filteredResults = results.filter((val) => {
       return (
         val.name.toLowerCase().includes(filterName.toLowerCase()) &&
-        (filterNum.val()) &&
-        (filterType ? val.type.includes(filterType) : true) && 
+        (filterType ? val.type.includes(filterType) : true) &&
         (filterWeakness ? val.weaknesses.includes(filterWeakness) : true)
       );
     });
 
     setFilteredPokemon(filteredResults);
     setSearchName(filterName);
-    setSearchNum(filterNum);
     setSearchType(filterType);
     setSearchWeakness(filterWeakness);
   };
@@ -55,7 +48,8 @@ const Index = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.pokemon);
+        // testing return
+        // console.log(data.pokemon);
         setResults(data.pokemon);
         setFilteredPokemon(data.pokemon);
       })
@@ -64,10 +58,9 @@ const Index = () => {
 
   return (
     <div className="Index">
-      <h1>Pokemon</h1>
+      <h1>PokemonGO Codex</h1>
       <PokemonForm
         searchName={searchName}
-        searchNum={searchNum}
         searchType={searchType}
         searchWeakness={searchWeakness}
         filterResults={filterResults}

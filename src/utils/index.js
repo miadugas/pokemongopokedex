@@ -1,5 +1,5 @@
 export const renderOptions = (arr, prop) => {
- let list = [];
+let list = [];
  for (let item of arr) {
    list.push(...item[prop]);
  }

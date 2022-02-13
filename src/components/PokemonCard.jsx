@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const PokemonCard = ({ pokemon }) => {
   return (
     <div className="card col-3">
       <Link to={pokemon.name.toLowerCase().replace(/ /g, "-")} state={pokemon}>
-        <h2>{pokemon.name}</h2>
+        <h3>{pokemon.name}</h3>
       </Link>
+      <h3>Number</h3>
       <small>{pokemon.num}</small>
       <h3>Type</h3>
       <ul>

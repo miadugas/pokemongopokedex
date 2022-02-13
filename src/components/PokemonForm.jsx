@@ -6,7 +6,6 @@ const PokemonForm = ({
   searchWeakness,
   filteredPokemon,
   filterResults,
-  searchNum
 }) => {
   return (
     <form>
@@ -18,16 +17,6 @@ const PokemonForm = ({
           id="searchName"
           value={searchName}
           onChange={(event) => filterResults(event.target.value, "name")}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="searchNum">Number</label>
-        <input
-          type="text"
-          name="searchNum"
-          id="searchNum"
-          value={searchNum}
-          onChange={(event) => filterResults(event.target.value, "number")}
         />
       </div>
       <div className="form-group">

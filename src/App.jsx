@@ -1,18 +1,20 @@
 import "./index.css";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Index from "./views/Index";
+import Details from "./views/Details";
 
 
 
-
-function App() {
+const App = () => {
   return (
-    <div className="app-container">
-        <h1>PokemonGO Pokedex</h1>
-        <div className="pokemon-container">        
-          <div className="collection-container">
-
-        </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path=":name" element={<Details />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
