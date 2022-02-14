@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom";
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({pokemon}) => {
   return (
     <div className="card col-3">
+      <img className="card-img" src={pokemon.img} alt={pokemon} />
       <Link to={pokemon.name.toLowerCase().replace(/ /g, "-")} state={pokemon}>
         <h3>{pokemon.name}</h3>
       </Link>

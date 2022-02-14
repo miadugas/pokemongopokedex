@@ -64,9 +64,8 @@ const Index = () => {
         searchType={searchType}
         searchWeakness={searchWeakness}
         filterResults={filterResults}
-        filteredPokemon={filteredPokemon}
-      />
-      <PokemonList filteredPokemon={filteredPokemon} />
+        filteredPokemon={filteredPokemon}/>
+      <PokemonList filteredPokemon={filteredPokemon}/>
     </div>
   );
 };

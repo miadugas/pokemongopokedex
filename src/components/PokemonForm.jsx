@@ -8,11 +8,13 @@ const PokemonForm = ({
   filterResults,
 }) => {
   return (
+    <div className="form-container">
     <form>
       <div className="form-group">
-        <label htmlFor="searchName">Name</label>
+        <label htmlFor="searchName">Name </label>
         <input
           type="text"
+          placeholder=" Search by name"
           name="searchName"
           id="searchName"
           value={searchName}
@@ -20,7 +22,7 @@ const PokemonForm = ({
         />
       </div>
       <div className="form-group">
-        <label htmlFor="searchType">Type</label>
+        <label htmlFor="searchType">Type </label>
         <select
           name="searchType"
           id="searchType"
@@ -38,7 +40,7 @@ const PokemonForm = ({
         </select>
       </div>
       <div className="form-group">
-        <label htmlFor="searchWeakness">Weakness</label>
+        <label htmlFor="searchWeakness">Weakness </label>
         <select
           name="searchWeakness"
           id="searchWeakness"
@@ -58,6 +60,7 @@ const PokemonForm = ({
         </select>
       </div>
     </form>
+    </div>
   );
 };
 
